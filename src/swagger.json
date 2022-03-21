@@ -123,6 +123,31 @@
 					}
 				}
 			}
+		},
+		"/users":{
+			"post": {
+				"tags": ["User"],
+				"summary": "Create a new User",
+				"description": "Create a new User",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/definitions/User"
+							}
+						}
+					}
+				
+				},
+				"responses": {
+					"201": {
+						"description": "Specification created"
+					},
+					"500": {
+						"description": "Specification already exists (server error)"
+					}
+				}
+			}
 		}
 			
 	},
@@ -136,6 +161,27 @@
 				"description": {
 					"type": "string"
 				}				
+			}
+		},
+		"User":{
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"password": {
+					"type": "string"
+				},
+				"username": {
+					"type": "string"
+				},
+				"driver_license": {
+					"type": "string"
+				}
+				
 			}
 		}
 	}
